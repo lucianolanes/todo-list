@@ -13,12 +13,18 @@
         criarLi.innerText = textoDigitado.value; 
         criarLi.addEventListener('click', mudarBackground);
         listaOrdenada.appendChild(criarLi);
-
         textoDigitado.value = '';
         }
     });
 
 
     function mudarBackground (event) {
-    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+        let itensDaLista = document.getElementsByClassName('itemDaLista');
+        for (index = 0; index < itensDaLista.length; index +=1){
+            if (itensDaLista[index] === event.target){
+                event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+            } else {
+                itensDaLista[index].style.backgroundColor = 'white';
+            }
+        }    
     }
