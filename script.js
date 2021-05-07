@@ -7,6 +7,7 @@
 
     botaoAdicionar.addEventListener('click', function (){
 
+        if (textoDigitado.value.length > 0){
        let listaOrdenada = document.querySelector('#lista-tarefas');
 
        let criarLi = document.createElement('li');
@@ -16,5 +17,5 @@
         listaOrdenada.appendChild(criarLi);
 
         textoDigitado.value = '';
-
+        }
     });
