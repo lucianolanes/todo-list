@@ -28,6 +28,12 @@ p {
 
 input {
     margin-left:490px;
-    margin-top: 40px;
+    margin-top: 25px;
     font-size: 25px;
 }
+
+button {
+    position: relative;
+    left: 500px;
+    margin-top: 30px;
+} 
