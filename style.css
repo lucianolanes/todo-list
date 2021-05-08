@@ -34,6 +34,22 @@ input {
 
 button {
     position: relative;
-    left: 500px;
+    left: 450px;
     margin-top: 30px;
+    background-color:#20bf55;
+    border-radius: 20px;
+    border: solid 1px #20bf55;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
 } 
+
+button:active {
+    border-radius: 20px;
+    border: solid 1px white;
+}
+
+li {
+    font-size: 25px;
+    margin-left: 20px;
+}
