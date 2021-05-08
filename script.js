@@ -30,6 +30,8 @@ function mudarBackground (event) {
     }    
 }
 
+// Função .constains e outras utilizações do 'classList' vista no link https://mzl.la/3es1LU2
+
 function riscar (event) {
     if (event.target.classList.contains('completed')){
     event.target.classList.remove('completed');
