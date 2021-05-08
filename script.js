@@ -18,6 +18,10 @@ botaoAdicionar.addEventListener('click', function (){
     }
 });
 
+let botaoApagar = document.getElementById('apaga-tudo');
+
+botaoApagar.addEventListener('click', apagarTudo);
+
 
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
@@ -38,4 +42,13 @@ function riscar (event) {
     } else {
     event.target.classList.add('completed');
   }
+}
+
+// Função para remover uma tag vista no link https://bit.ly/3o1HRSV
+
+function apagarTudo (){
+    let itensDaLista = document.querySelectorAll('.itemDaLista');
+    for (index = 0; index < itensDaLista.length; index +=1){
+        itensDaLista[index].remove();
+    }
 }
