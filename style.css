@@ -1,3 +1,16 @@
 .completed {
     text-decoration: line-through;
 }
+
+body {
+    margin: 0;
+    height: 563px;
+    border: #01baef 20px solid;
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #0b4f6c;
+    font-size: 50px;
+    text-align: center;
+}
