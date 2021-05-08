@@ -6,6 +6,7 @@ body {
     margin: 0;
     height: 563px;
     border: #01baef 20px solid;
+    font-family:'Roboto Mono', monospace;;
 }
 
 h1 {
@@ -13,4 +14,9 @@ h1 {
     color: #0b4f6c;
     font-size: 50px;
     text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #757575;
 }
