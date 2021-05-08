@@ -22,6 +22,9 @@ let botaoApagar = document.getElementById('apaga-tudo');
 
 botaoApagar.addEventListener('click', apagarTudo);
 
+let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
+
+botaoRemoverFinalizados.addEventListener('click', removerFinalizados)
 
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
@@ -52,3 +55,10 @@ function apagarTudo (){
         itensDaLista[index].remove();
     }
 }
+
+function removerFinalizados (){
+    let itensMarcados = document.querySelectorAll('.completed');
+    for (index = 0; index < itensMarcados.length; index +=1){
+        itensMarcados[index].remove();
+        }
+    }
