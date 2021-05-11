@@ -7,11 +7,10 @@ body {
     border: #01baef 20px solid;
     font-family:'Roboto Mono', monospace;
     margin: 0;
-    position: fixed;
+    position:fixed;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
 }
 
 h1 {
@@ -54,6 +53,12 @@ button {
 button:active {
     border-radius: 20px;
     border: solid 1px white;
+}
+
+/* Propriedades que alteram colunas consultadas no link https://bit.ly/3bedfbF */
+ol {
+    column-count: 3;
+    column-span: 8;
 }
 
 li {

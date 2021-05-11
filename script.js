@@ -26,6 +26,10 @@ let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
 
 botaoRemoverFinalizados.addEventListener('click', removerFinalizados)
 
+let botaoX = document.getElementById('remover-selecionado');
+
+botaoX.addEventListener('click', removerSelecionado);
+
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
     for (index = 0; index < itensDaLista.length; index +=1){
@@ -62,3 +66,13 @@ function removerFinalizados (){
         itensMarcados[index].remove();
         }
     }
+
+function removerSelecionado (){
+    let itensDaLista = document.querySelectorAll('.itemDaLista');
+
+    for (index = 0; index < itensDaLista.length; index +=1){
+        if (itensDaLista[index].style.backgroundColor === 'rgb(128, 128, 128)'){
+        itensDaLista[index].remove();
+        }
+    }
+}
