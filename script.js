@@ -85,12 +85,13 @@ function removerSelecionado (){
     }
 }
 
-function subirTarefa (){
+function subirTarefa() {
     let tarefaSelecionada = document.querySelectorAll('.selecionado');
+    let arrayTemporario= [];
+
+    if (tarefaSelecionada.length > 0){
 
     let elementoAcima = tarefaSelecionada[0].previousElementSibling;
-
-    let arrayTemporario= [];
 
     arrayTemporario.push(tarefaSelecionada[0].innerText);
 
@@ -104,19 +105,20 @@ function subirTarefa (){
     elementoAcima.classList.add('selecionado');
 
     if (tarefaSelecionada[0].classList.contains('completed')){
-        tarefaSelecionada[0].classList.remove('completed');
-        elementoAcima.classList.add('completed');
+    tarefaSelecionada[0].classList.remove('completed');
+    elementoAcima.classList.add('completed');
+        }
     }
-
 }
 
-function descerTarefa (){
 
+
+function descerTarefa() {
     let tarefaSelecionada = document.querySelectorAll('.selecionado');
-
-    let elementoAbaixo = tarefaSelecionada[0].nextElementSibling;
-
     let arrayTemporario= [];
+
+    if (tarefaSelecionada.length > 0) {
+    let elementoAbaixo = tarefaSelecionada[0].nextElementSibling;
 
     arrayTemporario.push(tarefaSelecionada[0].innerText);
 
@@ -127,9 +129,14 @@ function descerTarefa (){
 
     elementoAbaixo.innerText = arrayTemporario[0];
     elementoAbaixo.classList.add('selecionado');
-    
+
+
     if (tarefaSelecionada[0].classList.contains('completed')){
         tarefaSelecionada[0].classList.remove('completed');
         elementoAbaixo.classList.add('completed');
+
+        }
     }
 }
+
+
