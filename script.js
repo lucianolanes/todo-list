@@ -30,13 +30,20 @@ let botaoX = document.getElementById('remover-selecionado');
 
 botaoX.addEventListener('click', removerSelecionado);
 
+let botaoUp = document.getElementById('mover-cima');
+
+botaoUp.addEventListener('click', subirTarefa);
+
+
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
     for (index = 0; index < itensDaLista.length; index +=1){
         if (itensDaLista[index] === event.target){
         event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+        event.target.classList.add('selecionado');
         } else {
         itensDaLista[index].style.backgroundColor = 'white';
+        itensDaLista[index].classList.remove('selecionado');
         }
     }    
 }
