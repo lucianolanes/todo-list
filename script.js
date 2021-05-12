@@ -39,10 +39,8 @@ function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
     for (index = 0; index < itensDaLista.length; index +=1){
         if (itensDaLista[index] === event.target){
-        event.target.style.backgroundColor = 'rgb(128, 128, 128)';
         event.target.classList.add('selecionado');
         } else {
-        itensDaLista[index].style.backgroundColor = 'white';
         itensDaLista[index].classList.remove('selecionado');
         }
     }    
@@ -82,4 +80,24 @@ function removerSelecionado (){
         itensDaLista[index].remove();
         }
     }
+}
+
+function subirTarefa (){
+    let tarefaSelecionada = document.querySelectorAll('.selecionado');
+
+    let elementoAcima = tarefaSelecionada[0].previousElementSibling;
+
+    let arrayTemporario= [];
+
+    arrayTemporario.push(tarefaSelecionada[0].innerText);
+
+    arrayTemporario.push(elementoAcima.innerText);
+
+    tarefaSelecionada[0].innerText = arrayTemporario[1];
+    tarefaSelecionada[0].classList.remove('selecionado');
+
+
+    elementoAcima.innerText = arrayTemporario[0];
+    elementoAcima.classList.add('selecionado');
+ 
 }
