@@ -79,7 +79,7 @@ function removerSelecionado (){
     let itensDaLista = document.querySelectorAll('.itemDaLista');
 
     for (index = 0; index < itensDaLista.length; index +=1){
-        if (itensDaLista[index].style.backgroundColor === 'rgb(128, 128, 128)'){
+        if (itensDaLista[index].classList.contains('selecionado')){
         itensDaLista[index].remove();
         }
     }
