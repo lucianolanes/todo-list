@@ -34,6 +34,9 @@ let botaoUp = document.getElementById('mover-cima');
 
 botaoUp.addEventListener('click', subirTarefa);
 
+let botaoDown = document.getElementById('mover-baixo');
+
+botaoDown.addEventListener('click', descerTarefa);
 
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
@@ -99,5 +102,25 @@ function subirTarefa (){
 
     elementoAcima.innerText = arrayTemporario[0];
     elementoAcima.classList.add('selecionado');
- 
+
+}
+
+function descerTarefa (){
+
+    let tarefaSelecionada = document.querySelectorAll('.selecionado');
+
+    let elementoAbaixo = tarefaSelecionada[0].nextElementSibling;
+
+    let arrayTemporario= [];
+
+    arrayTemporario.push(tarefaSelecionada[0].innerText);
+
+    arrayTemporario.push(elementoAbaixo.innerText);
+
+    tarefaSelecionada[0].innerText = arrayTemporario[1];
+    tarefaSelecionada[0].classList.remove('selecionado');
+
+
+    elementoAbaixo.innerText = arrayTemporario[0];
+    elementoAbaixo.classList.add('selecionado');
 }
