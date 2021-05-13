@@ -43,7 +43,7 @@ input::placeholder{
 
 button {
     position: relative;
-    left: 420px;
+    left: 330px;
     margin-top: 30px;
     background-color:#20bf55;
     border-radius: 20px;
@@ -51,9 +51,20 @@ button {
     color: white;
     font-weight: 700;
     font-size: 20px;
+    outline: none;
 } 
 
-button:active {
+#mover-cima, #mover-baixo{
+    background-color: rgb(255, 208, 0);
+    border: solid 1px rgb(255, 208, 0);
+}
+
+#remover-selecionado {
+    background-color: crimson;
+    border: crimson solid 1px;
+}
+
+button:active, #mover-cima:active, #mover-baixo:active, #remover-selecionado:active{
     border-radius: 20px;
     border: solid 1px white;
 }

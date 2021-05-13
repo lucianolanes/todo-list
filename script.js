@@ -18,26 +18,6 @@ botaoAdicionar.addEventListener('click', function (){
     }
 });
 
-let botaoApagar = document.getElementById('apaga-tudo');
-
-botaoApagar.addEventListener('click', apagarTudo);
-
-let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
-
-botaoRemoverFinalizados.addEventListener('click', removerFinalizados)
-
-let botaoX = document.getElementById('remover-selecionado');
-
-botaoX.addEventListener('click', removerSelecionado);
-
-let botaoUp = document.getElementById('mover-cima');
-
-botaoUp.addEventListener('click', subirTarefa);
-
-let botaoDown = document.getElementById('mover-baixo');
-
-botaoDown.addEventListener('click', descerTarefa);
-
 function mudarBackground (event) {
     let itensDaLista = document.getElementsByClassName('itemDaLista');
     for (index = 0; index < itensDaLista.length; index +=1){
@@ -59,6 +39,10 @@ function riscar (event) {
   }
 }
 
+let botaoApagar = document.getElementById('apaga-tudo');
+
+botaoApagar.addEventListener('click', apagarTudo);
+
 // Função para remover uma tag vista no link https://bit.ly/3o1HRSV
 
 function apagarTudo (){
@@ -68,6 +52,10 @@ function apagarTudo (){
     }
 }
 
+let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
+
+botaoRemoverFinalizados.addEventListener('click', removerFinalizados)
+
 function removerFinalizados (){
     let itensMarcados = document.querySelectorAll('.completed');
     for (index = 0; index < itensMarcados.length; index +=1){
@@ -75,6 +63,10 @@ function removerFinalizados (){
         }
     }
 
+let botaoX = document.getElementById('remover-selecionado');
+
+botaoX.addEventListener('click', removerSelecionado);
+    
 function removerSelecionado (){
     let itensDaLista = document.querySelectorAll('.itemDaLista');
 
@@ -84,6 +76,10 @@ function removerSelecionado (){
         }
     }
 }
+
+let botaoUp = document.getElementById('mover-cima');
+
+botaoUp.addEventListener('click', subirTarefa);
 
 function subirTarefa() {
     let tarefaSelecionada = document.querySelectorAll('.selecionado');
@@ -114,6 +110,11 @@ function subirTarefa() {
     }
 }
 
+
+let botaoDown = document.getElementById('mover-baixo');
+
+botaoDown.addEventListener('click', descerTarefa);
+
 function descerTarefa() {
     let tarefaSelecionada = document.querySelectorAll('.selecionado');
     let arrayTemporario= [];
@@ -142,4 +143,12 @@ function descerTarefa() {
     }
 }
 
+let botaoSalvar = document.getElementById('salvar-tarefas');
+botaoSalvar.addEventListener('click', salvarTarefas);
 
+function salvarTarefas (){
+    let tarefas = document.querySelectorAll('.itemDaLista');
+    // for (index = 0; index < tarefas.length; index += 1){
+        textoTarefa = tarefas[index].innerText;
+        localStorage.setItem(index+1, textoTarefa);
+    }
