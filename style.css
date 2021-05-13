@@ -4,6 +4,8 @@
 
 .selecionado{
     background-color: rgb(128, 128, 128);
+    max-width: fit-content;
+    border-radius: 2px;
 }
 body {
     height: 563px;
@@ -55,13 +57,13 @@ button {
 } 
 
 #mover-cima, #mover-baixo{
-    background-color: rgb(255, 208, 0);
-    border: solid 1px rgb(255, 208, 0);
+    background-color: rgba(255, 214, 34, 0.767);
+    border: solid 1px rgba(255, 214, 34, 0.767);
 }
 
 #remover-selecionado {
-    background-color: crimson;
-    border: crimson solid 1px;
+    background-color: rgba(221, 24, 63, 0.801);
+    border: rgba(221, 24, 63, 0.801) solid 1px;
 }
 
 button:active, #mover-cima:active, #mover-baixo:active, #remover-selecionado:active{

@@ -50,6 +50,7 @@ function apagarTudo (){
     for (index = 0; index < itensDaLista.length; index +=1){
         itensDaLista[index].remove();
     }
+    localStorage.clear();
 }
 
 let botaoRemoverFinalizados = document.getElementById('remover-finalizados');
@@ -147,8 +148,14 @@ let botaoSalvar = document.getElementById('salvar-tarefas');
 botaoSalvar.addEventListener('click', salvarTarefas);
 
 function salvarTarefas (){
-    let tarefas = document.querySelectorAll('.itemDaLista');
-    // for (index = 0; index < tarefas.length; index += 1){
-        textoTarefa = tarefas[index].innerText;
-        localStorage.setItem(index+1, textoTarefa);
+    let listaTarefas = document.getElementById('lista-tarefas');
+        localStorage.setItem('tasks', listaTarefas.innerHTML);
     }
+    
+window.onload = pegarTarefa();
+
+function pegarTarefa (){
+    let listaTarefas = document.getElementById('lista-tarefas');
+    listaTarefas.innerHTML = localStorage.getItem('tasks');
+}
+
