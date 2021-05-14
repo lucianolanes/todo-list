@@ -1,83 +1,84 @@
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-.selecionado{
-    background-color: rgb(128, 128, 128);
-    max-width: fit-content;
-    border-radius: 2px;
+.selecionado {
+  background-color: rgb(128, 128, 128);
+  max-width: fit-content;
+  border-radius: 2px;
 }
+
 body {
-    height: 563px;
-    border: #01baef 20px solid;
-    font-family:'Roboto Mono', monospace;
-    margin: 0;
-    position:fixed;
-    left: 0;
-    right: 0;
-    top: 0;
+  height: 563px;
+  border: #01baef 20px solid;
+  font-family:'Roboto Mono', monospace;
+  margin: 0;
+  position:fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 h1 {
-    font-family: 'Roboto Condensed', sans-serif;
-    color: #0b4f6c;
-    font-size: 50px;
-    text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #0b4f6c;
+  font-size: 50px;
+  text-align: center;
 }
 
 p {
-    text-align: center;
-    color: #757575;
+  text-align: center;
+  color: #757575;
 }
 
 input {
-    margin-left:490px;
-    margin-top: 25px;
-    font-size: 25px;
+  margin-left:490px;
+  margin-top: 25px;
+  font-size: 25px;
 }
 
-input::placeholder{
-    font-style: italic;
-    font-size: 20px;
-    opacity: 45%;
-    text-align: center;
+input::placeholder {
+font-style: italic;
+font-size: 20px;
+opacity: 45%;
+text-align: center;
 }
 
 button {
-    position: relative;
-    left: 330px;
-    margin-top: 30px;
-    background-color:#20bf55;
-    border-radius: 20px;
-    border: solid 1px #20bf55;
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
-    outline: none;
+  position: relative;
+  left: 330px;
+  margin-top: 30px;
+  background-color:#20bf55;
+  border-radius: 20px;
+  border: solid 1px #20bf55;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  outline: none;
 } 
 
-#mover-cima, #mover-baixo{
-    background-color: rgba(255, 214, 34, 0.767);
-    border: solid 1px rgba(255, 214, 34, 0.767);
+#mover-cima, #mover-baixo {
+  background-color: rgba(255, 214, 34, 0.767);
+  border: solid 1px rgba(255, 214, 34, 0.767);
 }
 
 #remover-selecionado {
-    background-color: rgba(221, 24, 63, 0.801);
-    border: rgba(221, 24, 63, 0.801) solid 1px;
+  background-color: rgba(221, 24, 63, 0.801);
+  border: rgba(221, 24, 63, 0.801) solid 1px;
 }
 
 button:active, #mover-cima:active, #mover-baixo:active, #remover-selecionado:active{
-    border-radius: 20px;
-    border: solid 1px white;
+  border-radius: 20px;
+  border: solid 1px white;
 }
 
 /* Propriedades que alteram colunas consultadas no link https://bit.ly/3bedfbF */
 ol {
-    column-count: 3;
-    column-span: 8;
+  column-count: 3;
+  column-span: 8;
 }
 
 li {
-    font-size: 25px;
-    margin-left: 20px;
+  font-size: 25px;
+  margin-left: 20px;
 }
