@@ -1,19 +1,6 @@
 const textoDigitado = document.querySelector('#texto-tarefa');
 const botaoAdicionar = document.querySelector('#criar-tarefa');
 
-botaoAdicionar.addEventListener('click', function () {
-  if (textoDigitado.value.length > 0) {
-    const listaOrdenada = document.querySelector('#lista-tarefas');
-    const criarLi = document.createElement('li');
-    criarLi.className = 'itemDaLista';
-    criarLi.innerText = textoDigitado.value; 
-    criarLi.addEventListener('click', mudarBackground);
-    criarLi.addEventListener('dblclick', riscar);
-    listaOrdenada.appendChild(criarLi);
-    textoDigitado.value = '';
-  }
-});
-
 function mudarBackground(event) {
   const itensDaLista = document.getElementsByClassName('itemDaLista');
   for (let index = 0; index < itensDaLista.length; index += 1) {
@@ -26,7 +13,6 @@ function mudarBackground(event) {
 }
 
 // Função .constains e outras utilizações do 'classList' vista no link https://mzl.la/3es1LU2
-
 function riscar(event) {
   if (event.target.classList.contains('completed')) {
     event.target.classList.remove('completed');
@@ -35,12 +21,24 @@ function riscar(event) {
   }
 }
 
-const botaoApagar = document.getElementById('apaga-tudo');
+botaoAdicionar.addEventListener('click', function () {
+  const tarefa = document.querySelectorAll('.itemDaLista');
+  if (textoDigitado.value.length > 0 && tarefa.length <= 29) {
+    const listaOrdenada = document.querySelector('#lista-tarefas');
+    const criarLi = document.createElement('li');
+    criarLi.className = 'itemDaLista';
+    criarLi.innerText = textoDigitado.value; 
+    criarLi.addEventListener('click', mudarBackground);
+    criarLi.addEventListener('dblclick', riscar);
+    listaOrdenada.appendChild(criarLi);
+    textoDigitado.value = '';
+  }
+});
 
+const botaoApagar = document.getElementById('apaga-tudo');
 botaoApagar.addEventListener('click', apagarTudo);
 
 // Função para remover uma tag vista no link https://bit.ly/3o1HRSV
-
 function apagarTudo() {
   const itensDaLista = document.querySelectorAll('.itemDaLista');
   for (let index = 0; index < itensDaLista.length; index += 1) {
@@ -50,7 +48,6 @@ function apagarTudo() {
 }
 
 const botaoRemoverFinalizados = document.getElementById('remover-finalizados');
-
 botaoRemoverFinalizados.addEventListener('click', removerFinalizados)
 
 function removerFinalizados() {
@@ -61,7 +58,6 @@ function removerFinalizados() {
 }
 
 const botaoX = document.getElementById('remover-selecionado');
-
 botaoX.addEventListener('click', removerSelecionado);
 
 function removerSelecionado() {
@@ -75,7 +71,6 @@ function removerSelecionado() {
 }
 
 const botaoUp = document.getElementById('mover-cima');
-
 botaoUp.addEventListener('click', subirTarefa);
 
 function subirTarefa() {
@@ -100,7 +95,6 @@ function subirTarefa() {
 }
 
 const botaoDown = document.getElementById('mover-baixo');
-
 botaoDown.addEventListener('click', descerTarefa);
 
 function descerTarefa() {
