@@ -80,7 +80,7 @@ botaoUp.addEventListener('click', subirTarefa);
 
 function subirTarefa() {
   const tarefaSelecionada = document.querySelectorAll('.selecionado');
-  let arrayTemporario= [];
+  const arrayTemporario= [];
 
   if (tarefaSelecionada.length > 0) {
     const elementoAcima = tarefaSelecionada[0].previousElementSibling;
@@ -123,18 +123,22 @@ function descerTarefa() {
   }
 }
 
-let botaoSalvar = document.getElementById('salvar-tarefas');
+const botaoSalvar = document.getElementById('salvar-tarefas');
 botaoSalvar.addEventListener('click', salvarTarefas);
 
-function salvarTarefas (){
-    let listaTarefas = document.getElementById('lista-tarefas');
-        localStorage.setItem('tasks', listaTarefas.innerHTML);
-    }
+function salvarTarefas() {
+  const listaTarefas = document.getElementById('lista-tarefas');
+  localStorage.setItem('tasks', JSON.stringify(listaTarefas.innerHTML));
+}
     
-window.onload = pegarTarefa();
-
-function pegarTarefa (){
-    let listaTarefas = document.getElementById('lista-tarefas');
-    listaTarefas.innerHTML = localStorage.getItem('tasks');
+function pegarTarefa() {
+  const listaTarefas = document.getElementById('lista-tarefas');
+  listaTarefas.innerHTML = JSON.parse(localStorage.getItem('tasks'));
+  const tarefa = document.querySelectorAll('.itemDaLista');
+  tarefa.forEach((task) => {
+    task.addEventListener('click', mudarBackground);
+    task.addEventListener('dblclick', riscar);
+  })
 }
 
+window.onload = pegarTarefa();
